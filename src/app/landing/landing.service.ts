@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { StrapiDefaultResponse } from '../common.interface';
-import { ILogoSlider, TitleBan } from './landing.interfaces';
+import { ILogoSlider, LandingOne, TitleBan } from './landing.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +15,12 @@ export class LandingService {
     return this.http
       .get<StrapiDefaultResponse>(`${environment.STRAPIURL}/api/title-ban?populate=profile_picture`)
       .pipe(map((r: StrapiDefaultResponse) => r.data as TitleBan));
+  }
+
+  getLandingOne(): Observable<LandingOne> {
+    return this.http
+      .get<StrapiDefaultResponse>(`${environment.STRAPIURL}/api/landing-one`)
+      .pipe(map((r: StrapiDefaultResponse) => r.data as LandingOne));
   }
 
   getLogosUrl(): Observable<string[]> {

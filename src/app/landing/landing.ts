@@ -27,4 +27,5 @@ export class Landing {
   strapiUrl = environment.STRAPIURL;
 
   titleBan = toSignal(this.landingService.getTitleBan());
+  landingOne = toSignal(this.landingService.getLandingOne());
 }

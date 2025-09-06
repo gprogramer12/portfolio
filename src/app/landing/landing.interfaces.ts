@@ -19,3 +19,13 @@ export interface ILogoSlider {
   publishedAt: string;
   logos: Picture[];
 }
+
+export interface LandingOne {
+  id: number;
+  documentId: string;
+  title: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
