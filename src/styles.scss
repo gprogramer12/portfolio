@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+@theme {
+  --animate-appear_scale: appear_scale 500ms ease-in-out;
+  @keyframes appear_scale {
+    0% {
+      transform: scale(0.7);
+      opacity: 0%;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 100%;
+    }
+  }
+}
