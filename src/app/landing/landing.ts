@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { environment } from '../../environments/environment';
+import { Onespinner } from '../onespinner/onespinner';
 import { LandingService } from './landing.service';
 
 @Component({
   selector: 'polf-landing',
-  imports: [CommonModule],
+  imports: [CommonModule, Onespinner],
   templateUrl: './landing.html',
   styleUrl: './landing.scss',
 })
