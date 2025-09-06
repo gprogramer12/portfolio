@@ -1,14 +1,17 @@
 <div class="relative h-screen w-screen flex items-center justify-center bg-blue-800">
-  <div class="flex flex-col-reverse px-4 md:flex-row items-center animate-appear_scale z-[11]">
-    <div class="flex flex-col mr-8">
-      <h1 class="text-6xl font-bold text-yellow-200">{{ titleBan()?.title }}.</h1>
-      <p class="text-xl text-zinc-200 mt-8">{{ titleBan()?.description }}</p>
+  <div class="flex flex-col">
+    <div class="flex flex-col-reverse px-4 md:flex-row items-center animate-appear_scale z-[11]">
+      <div class="flex flex-col mr-8">
+        <h1 class="text-6xl font-bold text-yellow-200">{{ titleBan()?.title }}.</h1>
+        <p class="text-xl text-zinc-200 mt-8">{{ titleBan()?.description }}</p>
+      </div>
+      <img
+        class="max-h-[50vh] mb-4 md:mb-0 shadow-lg"
+        [src]="`${strapiUrl}${titleBan()?.profile_picture?.url}`"
+        alt="Not found"
+      />
     </div>
-    <img
-      class="max-h-[50vh] mb-4 md:mb-0 shadow-lg"
-      [src]="`${strapiUrl}${titleBan()?.profile_picture?.url}`"
-      alt="Not found"
-    />
+    <polf-logoslider class="h-[200px] z-[100] w-[200px] self-center mt-2"> </polf-logoslider>
   </div>
   <polf-onespinner class="!hidden md:!absolute md:!block top-0 left-[25%] z-[10]"></polf-onespinner>
 </div>

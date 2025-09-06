@@ -10,3 +10,12 @@ export interface TitleBan {
   publishedAt: string;
   profile_picture: Picture;
 }
+
+export interface ILogoSlider {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  logos: Picture[];
+}

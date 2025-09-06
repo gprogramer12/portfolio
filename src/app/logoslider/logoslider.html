@@ -1,0 +1,15 @@
+<div class="relative h-full w-full rounded-2xl">
+  @for (src of images(); track $index) {
+    <img
+      [attr.src]="src"
+      alt=""
+      class="absolute inset-0 w-full h-full object-contain pointer-events-none will-change-[opacity,filter]"
+      [class.opacity-100]="isActive($index)()"
+      [class.opacity-0]="!isActive($index)()"
+      [class.blur-sm]="hydrated() && transitioning() && (isActive($index)() || isPrev($index)())"
+      [class.transition-[opacity,filter]]="hydrated()"
+      [class.duration-700]="hydrated()"
+      [class.ease-in-out]="hydrated()"
+    />
+  }
+</div>
