@@ -1,4 +1,4 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, input, InputSignal, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -14,4 +14,9 @@ export class ProjectCard {
   picture_url: InputSignal<string> = input('');
 
   strapiulr = environment.STRAPIURL;
+
+  expanded = signal(false);
+  toggle() {
+    this.expanded.update((v) => !v);
+  }
 }
