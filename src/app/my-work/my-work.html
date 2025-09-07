@@ -1,5 +1,13 @@
 <div class="relative w-full h-screen bg-blue-800 overflow-y-auto py-4 px-4">
-  <h1 class="text-6xl font-bold text-yellow-200 text-center">My Work</h1>
+  <div class="flex flex-row w-full items-center justify-center">
+    <h1 class="text-6xl font-bold text-yellow-200 text-center">
+      <a
+        [routerLink]="''"
+        class="text-7xl scale-95 transition-all duration-200 hover:scale-100 self-start"
+        ><- </a
+      >My Work
+    </h1>
+  </div>
 
   <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 justify-items-center mt-16">
     @for (project of projects(); track project.id) {

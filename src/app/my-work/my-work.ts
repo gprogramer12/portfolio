@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterModule } from '@angular/router';
 import { ProjectCard } from '../project-card/project-card';
 import { MyWorkService } from './my-work.service';
 
 @Component({
   selector: 'polf-my-work',
-  imports: [ProjectCard],
+  imports: [ProjectCard, RouterModule],
   templateUrl: './my-work.html',
   styleUrl: './my-work.scss',
 })
