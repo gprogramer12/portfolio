@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "vercel-build": "ng build --configuration production && ng run polfolio:server:production && rm -rf public && mkdir -p public && cp -r dist/polfolio/browser/* public/ && rm -f public/index.html",
+    "vercel-build": "ng build --configuration production && rm -rf public && mkdir -p public && cp -r dist/polfolio/browser/* public/ && rm -f public/index.html",
     "serve:ssr:polfolio": "node dist/polfolio/server/server.mjs",
     "lint": "ng lint"
   },
