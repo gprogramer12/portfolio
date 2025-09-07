@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
-import { Landing } from './landing/landing';
 
 export const routes: Routes = [
   {
     path: '',
-    component: Landing,
+    loadComponent: () => import('./landing/landing').then((c) => c.Landing),
+  },
+  {
+    path: 'my-work',
+    loadComponent: () => import('./my-work/my-work').then((c) => c.MyWork),
   },
 ];

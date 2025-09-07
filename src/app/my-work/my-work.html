@@ -1,0 +1,24 @@
+<div class="relative w-full h-screen bg-blue-800 overflow-y-auto py-4 px-4">
+  <h1 class="text-6xl font-bold text-yellow-200 text-center">My Work</h1>
+
+  <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 justify-items-center mt-16">
+    @for (project of projects(); track project.id) {
+      <polf-project-card
+        class="z-[10]"
+        [description]="project.description"
+        [title]="project.title"
+        [url]="project.url"
+        [picture_url]="project.picture.url"
+      ></polf-project-card>
+    }
+  </div>
+
+  <!-- This won't affect scroll anymore -->
+  <div
+    class="pointer-events-none md:fixed right-[5vw] top-0 h-full w-[30%] bg-blue-900 opacity-0 z-[1] animate-appear_bottom"
+  ></div>
+
+  <div
+    class="!hidden md:!fixed md:!block left-[5vw] h-full top-0 bg-blue-950 w-[30%] mx-8 my-8 opacity-0 z-[1] animate-appear_bottom"
+  ></div>
+</div>
