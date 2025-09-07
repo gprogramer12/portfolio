@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { Footer } from '../footer/footer';
 import { PolfInViewDirective } from '../inview.directive';
 import { Logoslider } from '../logoslider/logoslider';
 import { Onespinner } from '../onespinner/onespinner';
@@ -19,6 +20,7 @@ import { LandingService } from './landing.service';
     SnapScrollDirective,
     PolfInViewDirective,
     RouterModule,
+    Footer,
   ],
   templateUrl: './landing.html',
   styleUrl: './landing.scss',

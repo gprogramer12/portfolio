@@ -1,0 +1,27 @@
+<div class="relative h-screen w-full flex items-center justify-center bg-blue-950 overflow-x-clip">
+  <div
+    class="px-12 grid grid-cols-1 gap-4 w-fit justify-items-center z-[10] border-yellow-200 border-[2px] py-8 rounded-lg"
+  >
+    <div
+      polfInView="animate-appear_scale"
+      class="flex flex-col gap-2 text-4xl items-center opacity-0"
+    >
+      <h1 class="font-bold text-yellow-200 text-8xl">Contact Me:</h1>
+      <hr class="w-full h-px border-0 bg-yellow-200" />
+      <a
+        class="text-yellow-200 mt-4 duration-200 transition-all hover:underline hover:scale-[1.02]"
+        [href]="`mailto:${footerInfo()?.contacting?.mail}`"
+        >{{ footerInfo()?.contacting?.mail }}</a
+      >
+      <p class="text-yellow-200 mt-4 duration-200 transition-all hover:scale-[1.02]">
+        {{ footerInfo()?.contacting?.phone }}
+      </p>
+    </div>
+  </div>
+  <polf-logoslider class="h-[200px] z-[100] w-[200px] self-center ml-2"></polf-logoslider>
+
+  <div
+    class="!hidden md:!absolute md:!block absolute left-[5vw] h-full bg-blue-900 w-[30%] mx-8 my-8 opacity-0 z-[5]"
+    polfInView="animate-appear_bottom"
+  ></div>
+</div>

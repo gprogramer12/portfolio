@@ -51,10 +51,12 @@
     <div
       class="relative h-screen w-full flex items-center justify-center bg-blue-800 overflow-x-clip"
     >
-      <div class="px-4 md:px-0 grid grid-cols-2 gap-4 w-fit justify-items-center z-[10]">
+      <div
+        class="px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-4 w-fit justify-items-center z-[10]"
+      >
         <img
           [src]="`${strapiUrl}${landingTwo()?.picture?.url}`"
-          class="max-w-[30vw]"
+          class="!hidden md:!block max-w-[30vw]"
           alt="Could not load image"
         />
         <div class="flex flex-col opacity-0 justify-center" polfInView="animate-appear_right">
@@ -77,7 +79,7 @@
       <div class="px-4 md:px-0 grid grid-cols-1 gap-4 w-fit justify-items-center z-[16]">
         <div
           class="flex flex-col opacity-0 justify-center items-center"
-          polfInView="animate-appear_right"
+          polfInView="animate-appear_scale"
         >
           <h1 class="text-6xl font-bold text-blue-800">See My Work.</h1>
           <a [routerLink]="'/work'"
@@ -99,5 +101,8 @@
         <div class="!hidden md:!absolute md:!block top-0 left-[25%] z-[10]"></div>
       }
     </div>
+  </section>
+  <section>
+    <polf-footer></polf-footer>
   </section>
 </div>
