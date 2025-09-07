@@ -1,3 +1,3 @@
 export const environment = {
-  STRAPIURL: 'https://strapiprod',
+  STRAPIURL: 'https://strapi.polaguilar.com',
 };
