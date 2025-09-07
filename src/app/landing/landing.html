@@ -13,7 +13,7 @@
         >
           <div class="flex flex-col mr-8">
             <h1 class="text-6xl font-bold text-yellow-200">{{ titleBan()?.title }}.</h1>
-            <p class="text-xl text-zinc-200 mt-8 max-w-[30vw]">{{ titleBan()?.description }}</p>
+            <p class="text-xl text-zinc-200 mt-8 md:max-w-[30vw]">{{ titleBan()?.description }}</p>
           </div>
           <img
             class="max-h-[50vh] max-w-[30vw] mb-4 md:mb-0 shadow-lg"
@@ -34,7 +34,9 @@
     <div
       class="relative h-screen w-full flex items-center justify-center bg-yellow-100 overflow-x-clip"
     >
-      <div class="px-4 md:px-0 grid grid-cols-2 w-fit justify-items-center z-[10]">
+      <div
+        class="px-4 md:px-0 flex flex-col md:grid md:grid-cols-2 w-fit justify-items-center z-[10]"
+      >
         <div class="flex flex-col opacity-0" polfInView="animate-appear_left">
           <h1 class="text-6xl font-bold text-blue-800">{{ landingOne()?.title }}.</h1>
           <p class="text-xl text-blue-800 mt-8 md:max-w-[30vw]">{{ landingOne()?.description }}</p>
@@ -82,7 +84,7 @@
           class="flex flex-col opacity-0 justify-center items-center"
           polfInView="animate-appear_scale"
         >
-          <h1 class="text-6xl font-bold text-blue-800">See My Work.</h1>
+          <h1 class="text-5xl md:text-6xl font-bold text-blue-800">See My Work.</h1>
           <a [routerLink]="'/work'"
             ><button
               class="btn btn-square text-xl text-zinc-200 rounded-lg mt-12 cursor-pointer bg-blue-800 px-2 py-2 hover:scale-[1.2] duration-200 animate-bounce"
