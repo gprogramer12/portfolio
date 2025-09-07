@@ -1,11 +1,15 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "public": true,
   "rewrites": [
     {
-      "source": "/(.*\\.(?:js|css|ico|png|jpg|jpeg|gif|svg|webp|woff2?|ttf|map))",
-      "destination": "/$1"
-    },
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/(.*)", "destination": "/api" }
-  ]
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/polfolio/**"
+    }
+  }
 }
