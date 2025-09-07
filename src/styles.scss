@@ -15,6 +15,48 @@
   }
 }
 
+@theme {
+  --animate-appear_left: appear_left 700ms ease-in-out forwards;
+  @keyframes appear_left {
+    0% {
+      transform: translateX(-50vw);
+      opacity: 0%;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 100%;
+    }
+  }
+}
+
+@theme {
+  --animate-appear_right: appear_right 700ms ease-in-out forwards;
+  @keyframes appear_right {
+    0% {
+      transform: translateX(50vw);
+      opacity: 0%;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 100%;
+    }
+  }
+}
+
+@theme {
+  --animate-appear_bottom: appear_bottom 500ms ease-in-out forwards;
+
+  @keyframes appear_bottom {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0%;
+    }
+    100% {
+      transform: translateY(0) rotate(45deg);
+      opacity: 100%;
+    }
+  }
+}
 /* 👇 enables smooth interpolation for --reveal */
 @property --reveal {
   syntax: '<angle>';

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterModule } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { PolfInViewDirective } from '../inview.directive';
 import { Logoslider } from '../logoslider/logoslider';
@@ -17,6 +18,7 @@ import { LandingService } from './landing.service';
     Logoslider,
     SnapScrollDirective,
     PolfInViewDirective,
+    RouterModule,
   ],
   templateUrl: './landing.html',
   styleUrl: './landing.scss',
@@ -28,4 +30,5 @@ export class Landing {
 
   titleBan = toSignal(this.landingService.getTitleBan());
   landingOne = toSignal(this.landingService.getLandingOne());
+  landingTwo = toSignal(this.landingService.getLandingTwo());
 }

@@ -30,14 +30,74 @@
     s
   </section>
   <section>
-    <div class="h-screen w-full flex items-center justify-center bg-yellow-100">
-      <div class="grid grid-cols-2 w-fit justify-items-center">
-        <div class="flex flex-col">
+    <div
+      class="relative h-screen w-full flex items-center justify-center bg-yellow-100 overflow-x-clip"
+    >
+      <div class="px-4 md:px-0 grid grid-cols-2 w-fit justify-items-center z-[10]">
+        <div class="flex flex-col opacity-0" polfInView="animate-appear_left">
           <h1 class="text-6xl font-bold text-blue-800">{{ landingOne()?.title }}.</h1>
           <p class="text-xl text-blue-800 mt-8 md:max-w-[30vw]">{{ landingOne()?.description }}</p>
         </div>
         <polf-logoslider class="h-[200px] z-[100] w-[200px] self-center mt-2"> </polf-logoslider>
       </div>
+      <div
+        class="!hidden md:!absolute md:!block absolute right-[5vw] h-full bg-blue-800 w-[30%] mx-8 my-8 opacity-0 z-[5]"
+        polfInView="animate-appear_bottom"
+      ></div>
+    </div>
+  </section>
+
+  <section>
+    <div
+      class="relative h-screen w-full flex items-center justify-center bg-blue-800 overflow-x-clip"
+    >
+      <div class="px-4 md:px-0 grid grid-cols-2 gap-4 w-fit justify-items-center z-[10]">
+        <img
+          [src]="`${strapiUrl}${landingTwo()?.picture?.url}`"
+          class="max-w-[30vw]"
+          alt="Could not load image"
+        />
+        <div class="flex flex-col opacity-0 justify-center" polfInView="animate-appear_right">
+          <h1 class="text-6xl font-bold text-yellow-200">{{ landingTwo()?.title }}.</h1>
+          <p class="text-xl text-zinc-200 mt-8 md:max-w-[30vw]">{{ landingTwo()?.description }}</p>
+        </div>
+      </div>
+      <!-- background decortaiont -->
+      <div
+        class="!hidden md:!absolute md:!block absolute left-[5vw] h-full bg-yellow-100 w-[30%] mx-8 my-8 opacity-0 z-[5]"
+        polfInView="animate-appear_bottom"
+      ></div>
+    </div>
+  </section>
+
+  <section>
+    <div
+      class="relative h-screen w-full flex items-center justify-center bg-yellow-100 overflow-x-clip"
+    >
+      <div class="px-4 md:px-0 grid grid-cols-1 gap-4 w-fit justify-items-center z-[16]">
+        <div
+          class="flex flex-col opacity-0 justify-center items-center"
+          polfInView="animate-appear_right"
+        >
+          <h1 class="text-6xl font-bold text-blue-800">See My Work.</h1>
+          <a [routerLink]="'/work'"
+            ><button
+              class="btn btn-square text-xl text-zinc-200 rounded-lg mt-12 cursor-pointer bg-blue-800 px-2 py-2 hover:scale-[1.2] duration-200 animate-bounce"
+            >
+              MY WORK
+            </button></a
+          >
+        </div>
+      </div>
+      <!-- background decortaiont -->
+
+      @defer (on viewport) {
+        <polf-onespinner
+          class="!hidden md:!absolute md:!block top-0 left-[25%] z-[10]"
+        ></polf-onespinner>
+      } @placeholder {
+        <div class="!hidden md:!absolute md:!block top-0 left-[25%] z-[10]"></div>
+      }
     </div>
   </section>
 </div>

@@ -29,3 +29,14 @@ export interface LandingOne {
   updatedAt: string;
   publishedAt: string;
 }
+
+export interface LandingTwo {
+  id: number;
+  documentId: string;
+  title: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  picture: Picture;
+}
