@@ -1,3 +1,4 @@
+/* force animations in prod; no media queries, no masks, no custom props */
 $dots: 12;
 $radius: 40;
 $stroke: 2;
@@ -9,47 +10,32 @@ $gap: $dash;
   display: inline-block;
 }
 
-/* spinner container */
 .dot-spinner {
-  /* Default: mobile first → size = width of viewport */
   inline-size: 100vw;
   block-size: auto;
-  aspect-ratio: 1 / 1; // keep it square
+  aspect-ratio: 1 / 1;
   color: #4f46e5;
-
-  .dot-spinner__ring {
-    inline-size: 100%;
-    block-size: 100%;
-    transform-origin: 50% 50%;
-
-    circle {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: $stroke;
-      stroke-linecap: round;
-      stroke-dasharray: #{$dash} #{$gap};
-    }
-
-    -webkit-mask-image: conic-gradient(
-      from -90deg,
-      #000 0turn,
-      #000 var(--reveal),
-      transparent var(--reveal)
-    );
-    mask-image: conic-gradient(
-      from -90deg,
-      #000 0turn,
-      #000 var(--reveal),
-      transparent var(--reveal)
-    );
-
-    animation:
-      dot-spin 0.9s ease-out both,
-      dot-reveal 0.9s ease-out forwards;
-  }
 }
 
-/* On wider viewports (desktop), make it fit height */
+.dot-spinner__ring {
+  inline-size: 100%;
+  block-size: 100%;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  animation: dot-spin 10s linear infinite !important;
+}
+
+.dot-spinner__ring circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: $stroke;
+  stroke-linecap: round;
+  stroke-dasharray: #{$dash} #{$gap};
+  will-change: stroke-dashoffset;
+  animation: dot-shift 1.2s ease-in-out infinite alternate !important;
+}
+
+/* Desktop sizing */
 @media (min-aspect-ratio: 4/3) {
   .dot-spinner {
     inline-size: auto;
@@ -57,26 +43,14 @@ $gap: $dash;
   }
 }
 
+/* Keyframes are global; names are simple */
 @keyframes dot-spin {
-  from {
-    transform: rotate(0turn);
-  }
   to {
-    transform: rotate(1turn);
+    transform: rotate(360deg);
   }
 }
-
-@keyframes dot-reveal {
-  from {
-    --reveal: 0.08turn;
-  }
+@keyframes dot-shift {
   to {
-    --reveal: 1turn;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .dot-spinner .dot-spinner__ring {
-    animation: dot-reveal 3000ms linear forwards;
+    stroke-dashoffset: #{$dash + $gap};
   }
 }

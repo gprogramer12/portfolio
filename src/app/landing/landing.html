@@ -13,14 +13,15 @@
         >
           <div class="flex flex-col mr-8">
             <h1 class="text-6xl font-bold text-yellow-200">{{ titleBan()?.title }}.</h1>
-            <p class="text-xl text-zinc-200 mt-8">{{ titleBan()?.description }}</p>
+            <p class="text-xl text-zinc-200 mt-8 max-w-[30vw]">{{ titleBan()?.description }}</p>
           </div>
           <img
-            class="max-h-[50vh] mb-4 md:mb-0 shadow-lg"
+            class="max-h-[50vh] max-w-[30vw] mb-4 md:mb-0 shadow-lg"
             [src]="`${strapiUrl}${titleBan()?.profile_picture?.url}`"
             alt="Not found"
           />
         </div>
+
         <polf-logoslider class="h-[200px] z-[100] w-[200px] self-center mt-2"> </polf-logoslider>
       </div>
       <polf-onespinner
